@@ -3,17 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package practicapooelecciones.Eleccion;
+package practicapoojunio.Eleccion;
 
 import java.util.Arrays;
 import java.math.RoundingMode;
 import java.util.ArrayList;
+import java.util.Observable;
 
 /**
  *
  * @author Ruben
  */
-public class Eleccion  {
+public class Eleccion extends Observable {
     public String nombre;
     public int totalescaños;
     public double participacion;

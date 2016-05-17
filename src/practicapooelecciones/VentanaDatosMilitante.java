@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package practicapooelecciones;
+package practicapoojunio;
 
 import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.String;
 import java.io.FileNotFoundException;
@@ -17,9 +17,8 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import static practicapooelecciones.VentanaDatosSimpatizante.jTextArea2;
-import practicapooelecciones.Votante.Militante;
-import practicapooelecciones.Votante.Votante;
+import practicapoojunio.Votante.Militante;
+import practicapoojunio.Votante.Votante;
 
 /**
  *
@@ -28,13 +27,14 @@ import practicapooelecciones.Votante.Votante;
 public class VentanaDatosMilitante extends javax.swing.JFrame {
     private Object array;
     private final ArrayList militantes;
-
+    Votante votante;
     /**
      * Creates new form VentanaEncuestaMilitante
      */
     public VentanaDatosMilitante() {
         initComponents();
         this.militantes = new ArrayList();
+        
     }
 
     /**
@@ -307,7 +307,7 @@ public class VentanaDatosMilitante extends javax.swing.JFrame {
     
 
         JOptionPane.showMessageDialog(rootPane, "Militante registrado","Mensaje",JOptionPane.PLAIN_MESSAGE);
-        MenuElecciones obj= new MenuElecciones();
+        MenuElecciones obj= new MenuElecciones(votante);
         obj.setVisible(true);
         dispose();
                // TODO add your handling code here:
@@ -352,38 +352,7 @@ public class VentanaDatosMilitante extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {     
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaDatosMilitante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaDatosMilitante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaDatosMilitante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaDatosMilitante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VentanaDatosMilitante().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox ComboBox;

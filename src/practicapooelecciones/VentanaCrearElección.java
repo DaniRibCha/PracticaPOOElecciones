@@ -3,23 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package practicapooelecciones;
+package practicapoojunio;
 
 
 
-import java.io.BufferedReader;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import practicapooelecciones.Eleccion.Circuscripcion;
-import practicapooelecciones.Eleccion.Eleccion;
-import practicapooelecciones.Eleccion.ItemTablaEscaños;
-import practicapooelecciones.Eleccion.ItemTablaVotos;
-import practicapooelecciones.Eleccion.TablaEscaños;
-import practicapooelecciones.Eleccion.TablaVotos;
-import practicapooelecciones.Formacion.Formacion;
+import practicapoojunio.Eleccion.Circuscripcion;
+import practicapoojunio.Eleccion.Eleccion;
+import practicapoojunio.Eleccion.ItemTablaEscaños;
+import practicapoojunio.Eleccion.ItemTablaVotos;
+import practicapoojunio.Eleccion.TablaEscaños;
+import practicapoojunio.Eleccion.TablaVotos;
+import practicapoojunio.Formacion.Formacion;
+import practicapoojunio.Votante.Votante;
 
 /**
  *
@@ -27,7 +26,7 @@ import practicapooelecciones.Formacion.Formacion;
  */
 public class VentanaCrearElección extends javax.swing.JFrame {
     private final ArrayList elecciones;
-
+    Votante votante;
     /**
      * Creates new form VentanaCrearElección
      */
@@ -86,7 +85,6 @@ public class VentanaCrearElección extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jTextField8 = new javax.swing.JTextField();
         jTextField10 = new javax.swing.JTextField();
-        jToggleButton3 = new javax.swing.JToggleButton();
 
         jTextField9.setText("jTextField9");
 
@@ -145,13 +143,6 @@ public class VentanaCrearElección extends javax.swing.JFrame {
 
         jLabel13.setText("Población:");
 
-        jToggleButton3.setText("Crear Circuscripción");
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -160,8 +151,21 @@ public class VentanaCrearElección extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addContainerGap(531, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(408, 408, 408))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jToggleButton1)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jToggleButton2)
+                                .addGap(35, 35, 35)))
+                        .addContainerGap(123, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
@@ -224,25 +228,14 @@ public class VentanaCrearElección extends javax.swing.JFrame {
                                     .addComponent(jTextField8))
                                 .addGap(18, 18, 18)
                                 .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jToggleButton1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton3)
-                        .addGap(47, 47, 47))))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -310,8 +303,7 @@ public class VentanaCrearElección extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jToggleButton1)
-                    .addComponent(jToggleButton2)
-                    .addComponent(jToggleButton3))
+                    .addComponent(jToggleButton2))
                 .addContainerGap())
         );
 
@@ -382,7 +374,7 @@ public class VentanaCrearElección extends javax.swing.JFrame {
         }catch(Exception e){
         }
     JOptionPane.showMessageDialog(rootPane, "Elección creada correctamente","Mensaje",JOptionPane.PLAIN_MESSAGE);
-    MenuElecciones obj= new MenuElecciones();
+    MenuElecciones obj= new MenuElecciones(votante);
     obj.setVisible(true);
     dispose();
     
@@ -398,53 +390,15 @@ public class VentanaCrearElección extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField14ActionPerformed
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-    MenuElecciones obj=new MenuElecciones();   
+    MenuElecciones obj=new MenuElecciones(votante);   
     obj.setVisible(true);
     dispose();// TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton2ActionPerformed
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
-        VentanaCrearCircuscripcion obj=new VentanaCrearCircuscripcion();    
-        obj.setVisible(true);
-        dispose(); 
-    
-// TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
-
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaCrearElección.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaCrearElección.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaCrearElección.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaCrearElección.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VentanaCrearElección().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -488,6 +442,5 @@ public class VentanaCrearElección extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField9;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
     // End of variables declaration//GEN-END:variables
 }

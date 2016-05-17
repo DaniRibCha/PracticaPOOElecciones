@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package practicapooelecciones.Votante;
+package practicapoojunio.Votante;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -13,6 +13,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;
+import java.util.Observable;
 import java.util.Scanner;
 import static javax.swing.GroupLayout.Alignment.values;
 import javax.swing.*;
@@ -22,7 +23,7 @@ import static javax.swing.GroupLayout.Alignment.values;
  *
  * @author Ruben
  */
-public class Votante {
+public class Votante extends Observable {
     
     public String nombre;
     public String apellidos;
@@ -54,10 +55,10 @@ public class Votante {
     int i;
     for (i=0; i<2; i++){
         this.encuesta[i]= buffer.readLine();
-     
     }
+
     }
-    catch(Exception e){}finally{}
+    catch(Exception e){}
     }
     
 

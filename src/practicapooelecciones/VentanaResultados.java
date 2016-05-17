@@ -3,7 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package practicapooelecciones;
+package practicapoojunio;
+
+import java.text.DecimalFormat;
+import practicapoojunio.Eleccion.Eleccion;
+import practicapoojunio.Votante.Votante;
 
 
 /**
@@ -11,12 +15,35 @@ package practicapooelecciones;
  * @author Ruben
  */
 public class VentanaResultados extends javax.swing.JFrame {
-
+Votante votante;
+Eleccion eleccion;
     /**
      * Creates new form VentanaResultados
      */
     public VentanaResultados() {
         initComponents();
+        
+        VentanaResultados.participacion.setText(Double.toString(eleccion.participacion));
+        VentanaResultados.totalescaños.setText(Integer.toString(eleccion.totalescaños));
+        DecimalFormat decimales= new DecimalFormat("0.000");
+        
+        Double porcentajea= (eleccion.resultados_total_votoselec.tablavotos[0].numeroVotos)/(eleccion.totalescaños*eleccion.participacion);
+        Double porcentajeb= (eleccion.resultados_total_votoselec.tablavotos[1].numeroVotos)/(eleccion.totalescaños*eleccion.participacion);
+        Double porcentajec= (eleccion.resultados_total_votoselec.tablavotos[2].numeroVotos)/(eleccion.totalescaños*eleccion.participacion);
+        Double porcentajed= (eleccion.resultados_total_votoselec.tablavotos[3].numeroVotos)/(eleccion.totalescaños*eleccion.participacion);
+        decimales.format(porcentajea);
+        decimales.format(porcentajeb); 
+        decimales.format(porcentajec);
+        decimales.format(porcentajed);
+        VentanaResultados.porcentajea.setText(String.valueOf( decimales.format(porcentajea)));
+        VentanaResultados.porcentajeb.setText(String.valueOf( decimales.format(porcentajeb)));
+        VentanaResultados.porcentajec.setText(String.valueOf(decimales.format(porcentajec)));
+        VentanaResultados.porcentajed.setText(String.valueOf(decimales.format(porcentajed)));
+        VentanaResultados.Partidoa.setText(eleccion.resultados_total_votoselec.tablavotos[0].formacionPolitica.Nombre);
+        VentanaResultados.Partidob.setText(eleccion.resultados_total_votoselec.tablavotos[1].formacionPolitica.Nombre);
+        VentanaResultados.Partidoc.setText(eleccion.resultados_total_votoselec.tablavotos[2].formacionPolitica.Nombre);
+        VentanaResultados.Partidod.setText(eleccion.resultados_total_votoselec.tablavotos[3].formacionPolitica.Nombre);
+        
     }
 
     /**
@@ -32,14 +59,14 @@ public class VentanaResultados extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        participacion = new javax.swing.JLabel();
+        totalescaños = new javax.swing.JLabel();
+        porcentajea = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        porcentajed = new javax.swing.JLabel();
+        porcentajeb = new javax.swing.JLabel();
+        porcentajec = new javax.swing.JLabel();
         Partidoa = new javax.swing.JLabel();
         Partidob = new javax.swing.JLabel();
         Partidoc = new javax.swing.JLabel();
@@ -61,21 +88,21 @@ public class VentanaResultados extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Myriad Pro", 1, 18)); // NOI18N
         jLabel5.setText("RESULTADOS");
 
-        jLabel6.setText("jLabel6");
+        participacion.setText("participacion");
 
-        jLabel7.setText("jLabel7");
+        totalescaños.setText("totalescaños");
 
-        jLabel8.setText("jLabel8");
+        porcentajea.setText("porcentajea");
 
         jLabel11.setText("Porcentaje de votos:");
 
         jLabel12.setText("Escaños:");
 
-        jLabel15.setText("jLabel15");
+        porcentajed.setText("porcentajed");
 
-        jLabel13.setText("jLabel13");
+        porcentajeb.setText("porcentajeb");
 
-        jLabel14.setText("jLabel14");
+        porcentajec.setText("porcentajec");
 
         Partidoa.setText("A");
 
@@ -92,13 +119,13 @@ public class VentanaResultados extends javax.swing.JFrame {
             }
         });
 
-        Escañosa.setText("jLabel3");
+        Escañosa.setText("escañosa");
 
-        Escañosb.setText("jLabel4");
+        Escañosb.setText("escañosb");
 
-        Escañosc.setText("jLabel10");
+        Escañosc.setText("escañosc");
 
-        Escañosd.setText("jLabel16");
+        Escañosd.setText("escañosd");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,19 +142,19 @@ public class VentanaResultados extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel1)
                             .addComponent(jLabel11))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addGap(140, 140, 140))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8)
+                                    .addComponent(porcentajea)
                                     .addComponent(Partidoa)
                                     .addComponent(Escañosa))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel13)
+                                    .addComponent(porcentajeb)
                                     .addComponent(Partidob)
                                     .addComponent(Escañosb))
                                 .addGap(18, 18, 18)
@@ -135,11 +162,11 @@ public class VentanaResultados extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(Partidoc)
-                                            .addComponent(jLabel14))
+                                            .addComponent(porcentajec))
                                         .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(Partidod)
-                                            .addComponent(jLabel15)))
+                                            .addComponent(porcentajed)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(Escañosc)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -147,8 +174,8 @@ public class VentanaResultados extends javax.swing.JFrame {
                                 .addContainerGap())
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel6))
+                                    .addComponent(totalescaños)
+                                    .addComponent(participacion))
                                 .addGap(109, 109, 109))))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -163,7 +190,7 @@ public class VentanaResultados extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel6))
+                    .addComponent(participacion))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -172,7 +199,7 @@ public class VentanaResultados extends javax.swing.JFrame {
                                 .addComponent(jLabel2)
                                 .addGap(48, 48, 48))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel7)
+                                .addComponent(totalescaños)
                                 .addGap(55, 55, 55)))
                         .addComponent(jLabel11))
                     .addGroup(layout.createSequentialGroup()
@@ -184,10 +211,10 @@ public class VentanaResultados extends javax.swing.JFrame {
                             .addComponent(Partidod))
                         .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel15))))
+                            .addComponent(porcentajea)
+                            .addComponent(porcentajeb)
+                            .addComponent(porcentajec)
+                            .addComponent(porcentajed))))
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
@@ -204,7 +231,7 @@ public class VentanaResultados extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-    MenuElecciones obj=new MenuElecciones();
+    MenuElecciones obj=new MenuElecciones(votante);
     obj.setVisible(true);
     dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton1ActionPerformed
@@ -212,37 +239,7 @@ public class VentanaResultados extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaResultados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaResultados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaResultados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaResultados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VentanaResultados().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JLabel Escañosa;
@@ -256,15 +253,15 @@ public class VentanaResultados extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    public static javax.swing.JLabel jLabel13;
-    public static javax.swing.JLabel jLabel14;
-    public static javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
-    public static javax.swing.JLabel jLabel6;
-    public static javax.swing.JLabel jLabel7;
-    public static javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JToggleButton jToggleButton1;
+    public static javax.swing.JLabel participacion;
+    public static javax.swing.JLabel porcentajea;
+    public static javax.swing.JLabel porcentajeb;
+    public static javax.swing.JLabel porcentajec;
+    public static javax.swing.JLabel porcentajed;
+    public static javax.swing.JLabel totalescaños;
     // End of variables declaration//GEN-END:variables
 }

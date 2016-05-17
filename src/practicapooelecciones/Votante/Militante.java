@@ -3,11 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package practicapooelecciones.Votante;
+package practicapoojunio.Votante;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -28,7 +27,7 @@ public class Militante extends Votante{
         this.carnet = carnet;
     }
     
-    public Militante() throws FileNotFoundException, IOException{
+    public Militante() throws IOException{
         super();
         try{    
     FileReader archivo=new FileReader("archivomilitante.txt");

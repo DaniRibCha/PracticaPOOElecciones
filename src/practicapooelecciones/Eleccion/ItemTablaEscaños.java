@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package practicapooelecciones.Eleccion;
+package practicapoojunio.Eleccion;
 
-import practicapooelecciones.Formacion.Formacion;
+import practicapoojunio.Formacion.Formacion;
 
 /**
  *

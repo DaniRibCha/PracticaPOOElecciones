@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package practicapooelecciones.Lista;
+package practicapoojunio.Lista;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -12,8 +12,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import practicapooelecciones.Formacion.PartidoPolitico;
-import practicapooelecciones.Eleccion.Eleccion;
+import practicapoojunio.Formacion.PartidoPolitico;
+import practicapoojunio.Eleccion.Eleccion;
 
 /**
  *

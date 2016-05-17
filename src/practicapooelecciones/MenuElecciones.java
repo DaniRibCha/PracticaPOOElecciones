@@ -3,22 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package practicapooelecciones;
+package practicapoojunio;
 
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
-
-
+import practicapoojunio.Votante.Votante;
 /**
  *
  * @author Ruben
  */
 public class MenuElecciones extends javax.swing.JFrame {
+    Votante votante;
 
-    /**
-     * Creates new form MenudeElecciones
-     */
-    public MenuElecciones() {
+    public MenuElecciones(Votante votante) {
         initComponents();
        
     }
@@ -151,27 +148,36 @@ public class MenuElecciones extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-
+        if ("null".equals(VentanaCrearElección.jTextField3.getText())){JOptionPane.showMessageDialog(rootPane, "No hay elección disponible", "Error", JOptionPane.ERROR_MESSAGE);}
+        else{
         VentanaResultados obj= new VentanaResultados();
-        VentanaResultados.jLabel6.setText(VentanaCrearElección.jTextField3.getText());
-        VentanaResultados.jLabel7.setText(VentanaCrearElección.jTextField2.getText());
+        VentanaResultados.participacion.setText(VentanaCrearElección.jTextField3.getText());
+        VentanaResultados.totalescaños.setText(VentanaCrearElección.jTextField2.getText());
         DecimalFormat decimales= new DecimalFormat("0.000");
         
         Double porcentajea= ((Double.parseDouble(VentanaCrearElección.jTextField24.getText()))/(Double.parseDouble(VentanaCrearElección.jTextField1.getText())-Double.parseDouble(VentanaCrearElección.jTextField4.getText())-Double.parseDouble(VentanaCrearElección.jTextField5.getText()))*100);
         Double porcentajeb= ((Double.parseDouble(VentanaCrearElección.jTextField25.getText()))/(Double.parseDouble(VentanaCrearElección.jTextField1.getText())-Double.parseDouble(VentanaCrearElección.jTextField4.getText())-Double.parseDouble(VentanaCrearElección.jTextField5.getText()))*100);
         Double porcentajec= ((Double.parseDouble(VentanaCrearElección.jTextField26.getText()))/(Double.parseDouble(VentanaCrearElección.jTextField1.getText())-Double.parseDouble(VentanaCrearElección.jTextField4.getText())-Double.parseDouble(VentanaCrearElección.jTextField5.getText()))*100);
         Double porcentajed= ((Double.parseDouble(VentanaCrearElección.jTextField27.getText()))/(Double.parseDouble(VentanaCrearElección.jTextField1.getText())-Double.parseDouble(VentanaCrearElección.jTextField4.getText())-Double.parseDouble(VentanaCrearElección.jTextField5.getText()))*100);
-        VentanaResultados.jLabel8.setText(String.valueOf( decimales.format(porcentajea)));
-        VentanaResultados.jLabel13.setText(String.valueOf( decimales.format(porcentajeb)));
-        VentanaResultados.jLabel14.setText(String.valueOf(decimales.format(porcentajec)));
-        VentanaResultados.jLabel15.setText(String.valueOf(decimales.format(porcentajed)));
+        decimales.format(porcentajea);
+        decimales.format(porcentajeb);  
+        VentanaResultados.VentanaResultados.porcentajea.setText(String.valueOf( decimales.format(porcentajea)));
+        VentanaResultados.VentanaResultados.porcentajeb.setText(String.valueOf( decimales.format(porcentajeb)));
+        VentanaResultados.VentanaResultados.porcentajec.setText(String.valueOf(decimales.format(porcentajec)));
+        VentanaResultados.VentanaResultados.porcentajed.setText(String.valueOf(decimales.format(porcentajed)));
+        VentanaResultados.Partidoa.setText(String.valueOf(VentanaCrearElección.jTextField2));
+        VentanaResultados.Partidoa.setText(String.valueOf(VentanaCrearElección.jTextField3));
+        VentanaResultados.Partidoa.setText(String.valueOf(VentanaCrearElección.jTextField4));
+        VentanaResultados.Partidoa.setText(String.valueOf(VentanaCrearElección.jTextField5));
        /* VentanaResultados.Partidob.setText(VentanaCrearElección.jTextField13.getText());
         VentanaResultados.Partidoc.setText(VentanaCrearElección.jTextField14.getText());
         VentanaResultados.Partidod.setText(VentanaCrearElección.jTextField15.getText());*/
         
+        /*HAY QUE CAMBIAR TODO ESTO PARA QUE EL TEXTO QUE SE PONE SEA LOS DATOS POR EJEMPLO VentanaResultados.jLabel6.setText= eleccion.nombre;*/
+        
         obj.setVisible(true);
         dispose(); 
-        
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
@@ -200,7 +206,7 @@ public class MenuElecciones extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        VentanaCrearPartido obj= new VentanaCrearPartido();
+        VentanaTipoPartido obj= new VentanaTipoPartido();
         obj.setVisible(true);
         dispose();  // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -215,38 +221,7 @@ public class MenuElecciones extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuElecciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuElecciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuElecciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuElecciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MenuElecciones().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
