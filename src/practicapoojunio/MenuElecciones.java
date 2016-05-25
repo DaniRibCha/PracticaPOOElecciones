@@ -34,7 +34,6 @@ public class MenuElecciones extends javax.swing.JFrame {
         jToggleButton3 = new javax.swing.JToggleButton();
         jToggleButton4 = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
@@ -71,14 +70,6 @@ public class MenuElecciones extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Elecciones");
 
-        jButton1.setBackground(new java.awt.Color(51, 255, 255));
-        jButton1.setText("Crear Elección");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         jButton2.setText("Partidos Políticos");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,9 +98,7 @@ public class MenuElecciones extends javax.swing.JFrame {
                             .addComponent(jToggleButton4)
                             .addComponent(jButton2)
                             .addComponent(jButton3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
+                        .addGap(150, 150, 150))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jToggleButton1)
@@ -124,19 +113,14 @@ public class MenuElecciones extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(jToggleButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jToggleButton2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jToggleButton3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jToggleButton4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(2, 2, 2)
+                .addComponent(jToggleButton1)
+                .addGap(18, 18, 18)
+                .addComponent(jToggleButton2)
+                .addGap(18, 18, 18)
+                .addComponent(jToggleButton3)
+                .addGap(18, 18, 18)
+                .addComponent(jToggleButton4)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
                 .addGap(18, 18, 18)
@@ -199,12 +183,6 @@ public class MenuElecciones extends javax.swing.JFrame {
         dispose();         // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton4ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        VentanaCrearElección obj= new VentanaCrearElección();
-        obj.setVisible(true);
-        dispose(); // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         VentanaTipoPartido obj= new VentanaTipoPartido();
         obj.setVisible(true);
@@ -224,7 +202,6 @@ public class MenuElecciones extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
