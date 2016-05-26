@@ -9,29 +9,55 @@ import java.awt.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import practicapoojunio.Formacion.Formacion;
 
 /**
  *
  * @author Dani
  */
 public class Circuscripcion{
-   
+    public String nombre;
     public int poblacion;
     public int escaños;
+    public double participacion;
     public TablaVotos resultados_total_votos;
     public TablaEscaños resultados_total_escaños;
+    public ArrayList<Formacion> formacionesC;
+    public Eleccion eleccion;
 
-    public Circuscripcion(int poblacion, int escaños, TablaVotos resultados_total_votos, TablaEscaños resultados_total_escaños) {
+    public Circuscripcion(String nombre ,int poblacion, double participacion, ArrayList<Formacion> formacionesC) {
+        this.nombre = nombre;
         this.poblacion = poblacion;
-        this.escaños = escaños;
-        this.resultados_total_votos = resultados_total_votos;
-        this.resultados_total_escaños = resultados_total_escaños;
+        this.participacion = participacion;
+        this.formacionesC = new ArrayList<>();
+        for (int i = 0; i < formacionesC.size(); i++)
+            this.formacionesC.add(formacionesC.get(i));
     }
-
-
+    
+    public Circuscripcion(String nombre ,int poblacion, double participacion) {
+        this.nombre = nombre;
+        this.poblacion = poblacion;
+        this.participacion = participacion;
+    }
     
     public double getPoblacion() {
         return poblacion;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public ArrayList<Formacion> getFormaciones() {
+        return formacionesC;
+    }
+
+    public void setFormaciones(ArrayList<Formacion> formaciones) {
+        this.formacionesC = formaciones;
     }
 
     public void setPoblacion(int poblacion) {
@@ -42,8 +68,16 @@ public class Circuscripcion{
         return escaños;
     }
 
-    public void setEscaños(int escaños) {
-        this.escaños = escaños;
+    public void setEscaños(int escaños, Eleccion eleccion){
+        escaños = eleccion.totalescaños*(poblacion/eleccion.getPoblacionTotal());
+    }
+
+    public double getParticipacion() {
+        return participacion;
+    }
+
+    public void setParticipacion(double participacion) {
+        this.participacion = participacion;
     }
     
     public ItemTablaEscaños[] CalcularResultados (ItemTablaVotos[] votos, ItemTablaEscaños[] esc, Eleccion eleccion){
@@ -52,7 +86,7 @@ public class Circuscripcion{
         int maxElem;
         int indice;
         int esca;                                                               /*Pasamos los arrays a arraylists(AL)*/
-       ArrayList<Integer> votes = new ArrayList<>();
+        ArrayList<Integer> votes = new ArrayList<>();
         int i;
         for (i=0; i<votos.length; i++)
             votes.add(votos[i].numeroVotos);
@@ -109,4 +143,3 @@ public class Circuscripcion{
     
     
     
-
