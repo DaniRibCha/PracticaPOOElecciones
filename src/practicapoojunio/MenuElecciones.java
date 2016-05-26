@@ -161,10 +161,10 @@ public class MenuElecciones extends javax.swing.JFrame {
         Double porcentajed= ((Double.parseDouble(VentanaCrearElección.jTextField27.getText()))/(Double.parseDouble(VentanaCrearElección.jTextField1.getText())-Double.parseDouble(VentanaCrearElección.jTextField4.getText())-Double.parseDouble(VentanaCrearElección.jTextField5.getText()))*100);
         decimales.format(porcentajea);
         decimales.format(porcentajeb);  
-        VentanaResultados.VentanaResultados.porcentajea.setText(String.valueOf( decimales.format(porcentajea)));
-        VentanaResultados.VentanaResultados.porcentajeb.setText(String.valueOf( decimales.format(porcentajeb)));
-        VentanaResultados.VentanaResultados.porcentajec.setText(String.valueOf(decimales.format(porcentajec)));
-        VentanaResultados.VentanaResultados.porcentajed.setText(String.valueOf(decimales.format(porcentajed)));
+        VentanaResultados.porcentajea.setText(String.valueOf( decimales.format(porcentajea)));
+        VentanaResultados.porcentajeb.setText(String.valueOf( decimales.format(porcentajeb)));
+        VentanaResultados.porcentajec.setText(String.valueOf(decimales.format(porcentajec)));
+        VentanaResultados.porcentajed.setText(String.valueOf(decimales.format(porcentajed)));
         VentanaResultados.Partidoa.setText(String.valueOf(VentanaCrearElección.jTextField2));
         VentanaResultados.Partidoa.setText(String.valueOf(VentanaCrearElección.jTextField3));
         VentanaResultados.Partidoa.setText(String.valueOf(VentanaCrearElección.jTextField4));

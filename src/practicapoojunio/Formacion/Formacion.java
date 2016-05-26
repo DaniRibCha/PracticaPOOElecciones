@@ -22,6 +22,10 @@ public class Formacion {
         this.Siglas = Siglas;
         this.Logo = Logo;
     }
+    
+    public Formacion(String siglas){
+        this.Siglas = siglas;
+    }
 
     public String getNombre() {
         return Nombre;

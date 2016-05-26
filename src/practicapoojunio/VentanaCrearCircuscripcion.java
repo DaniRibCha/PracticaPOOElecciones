@@ -8,8 +8,8 @@ package practicapoojunio;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import javax.swing.JOptionPane;
-import practicapooelecciones.Eleccion.ItemTablaVotos;
-import practicapooelecciones.VentanaCrearElección;
+import practicapoojunio.Eleccion.ItemTablaVotos;
+import practicapoojunio.VentanaCrearElección;
 
 /**
  *

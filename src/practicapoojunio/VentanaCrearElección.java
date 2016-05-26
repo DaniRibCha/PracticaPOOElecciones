@@ -353,10 +353,10 @@ public class VentanaCrearElección extends javax.swing.JFrame {
     int poblacion = Integer.parseInt(VentanaCrearElección.jTextField8.getText());
     int escaños = Integer.parseInt(VentanaCrearElección.jTextField10.getText());
    
-    Circuscripcion circ = new Circuscripcion (poblacion,escaños,tabladevotos,tabladeescaños);
+    Circuscripcion circ = new Circuscripcion (nombre,poblacion,participacion);
         ArrayList<Circuscripcion> arraycirc = new ArrayList<Circuscripcion>();
     arraycirc.add(circ);
-    Eleccion elec=new Eleccion(nombre,totalescaños,participacion, tabladevotos,tabladeescaños,arraycirc);
+    Eleccion elec=new Eleccion(nombre, totalescaños);
     this.elecciones.add(elec);
     /*Para mostrar lo que haría Calcular resultado haríamos esto pero salta una excepción a la hora de crearlo y no lo añadiremos
     VentanaResultados.Escañosa.setText(Integer.toString(circ.CalcularResultados(listaitems,listaescaños,elec)[1].numeroEscaños));
