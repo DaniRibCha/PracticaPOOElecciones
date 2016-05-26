@@ -27,25 +27,7 @@ public class Militante extends Votante{
         this.carnet = carnet;
     }
     
-    public Militante() throws IOException{
-        super();
-        try{    
-    FileReader archivo=new FileReader("archivomilitante.txt");
-    BufferedReader buffer=new BufferedReader(archivo);
-    this.nombre = buffer.readLine();
-    this.apellidos= buffer.readLine();
-    this.edad = Integer.parseInt(buffer.readLine()) ;
-    this.profesion = buffer.readLine();
-    this.siglaspartido = buffer.readLine();
-     this.cuota = Double.parseDouble(buffer.readLine());
-    this.carnet = buffer.readLine();
-    int i;
-    for (i=0; i<2; i++){
-        this.encuesta[i]= buffer.readLine();}
    
-    }
-    catch(Exception e){}
-    }
     public double getCuota() {
         return cuota;
     }

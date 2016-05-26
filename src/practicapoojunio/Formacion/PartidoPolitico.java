@@ -5,13 +5,14 @@
  */
 package practicapoojunio.Formacion;
 
+import java.io.Serializable;
 import practicapoojunio.Eleccion.Eleccion;
 
 /**
  *
  * @author Ruben
  */
-public class PartidoPolitico extends Formacion {
+public class PartidoPolitico extends Formacion implements Serializable{
     
     public String  nombre;
     public String  siglas;

@@ -12,6 +12,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Observable;
 import java.util.Scanner;
@@ -23,7 +24,7 @@ import static javax.swing.GroupLayout.Alignment.values;
  *
  * @author Ruben
  */
-public class Votante extends Observable {
+public class Votante extends Observable implements Serializable {
     
     public String nombre;
     public String apellidos;
@@ -43,51 +44,10 @@ public class Votante extends Observable {
         this.encuesta = encuesta;
     }
 
-    public Votante() throws FileNotFoundException, IOException{
-    try{    
-    FileReader archivo=new FileReader("archivovotante.txt");
-    BufferedReader buffer=new BufferedReader(archivo);
-    this.nombre = buffer.readLine();
-    this.apellidos= buffer.readLine();
-    this.edad = Integer.parseInt(buffer.readLine()) ;
-    this.profesion = buffer.readLine();
-    this.siglaspartido = buffer.readLine();
-    int i;
-    for (i=0; i<2; i++){
-        this.encuesta[i]= buffer.readLine();
-    }
-
-    }
-    catch(Exception e){}
-    }
-    
-
-    public void GuardarVotante() throws IOException{
-        try{
-    FileWriter archivo=new FileWriter("archivosimpatizante.txt", true);
-    BufferedWriter buffer=new BufferedWriter(archivo);
-    PrintWriter salida=new PrintWriter(buffer);
-
-    salida.println(this.nombre);
-    salida.println(this.apellidos);
-    salida.println(this.edad);
-    salida.println(this.profesion);
-    salida.println(this.siglaspartido);
-    int i;
-    for (i=0; i<this.encuesta.length; i++){
-    salida.println(this.encuesta[i]);}
-    salida.close();
-    
-
-
-    salida.close();
-        }
-        catch(IOException e){JOptionPane.showMessageDialog(null, "ERROR","Mensaje",JOptionPane.PLAIN_MESSAGE);
-    }
-        finally{}
     
     
-    }
+
+    
 
     public String getNombre() {
         return nombre;

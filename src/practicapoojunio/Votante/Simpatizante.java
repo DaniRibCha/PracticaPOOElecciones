@@ -5,16 +5,20 @@
  */
 package practicapoojunio.Votante;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Ruben
  */
-public class Simpatizante extends Votante {
+public class Simpatizante extends Votante implements Serializable{
 
     public Simpatizante(String nombre, String apellidos, int edad, String profesion, String genero, String siglaspartido, String[] encuesta) {
         super(nombre, apellidos, edad, profesion, genero, siglaspartido, encuesta);
+        
     }
 
+    
   
  
 

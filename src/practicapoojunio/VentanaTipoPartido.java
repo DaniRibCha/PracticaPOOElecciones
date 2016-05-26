@@ -34,6 +34,11 @@ public class VentanaTipoPartido extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setText("Cargar Partido");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Crear Partido");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -80,7 +85,7 @@ public class VentanaTipoPartido extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        VentanaTipoPartido obj= new VentanaTipoPartido();
+        VentanaCrearPartido obj= new VentanaCrearPartido();
         obj.setVisible(true);
         dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -91,9 +96,13 @@ public class VentanaTipoPartido extends javax.swing.JFrame {
     dispose();           // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       VentanaLeerPartidos obj = new VentanaLeerPartidos();
+       obj.setVisible(true);
+       dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+  
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
