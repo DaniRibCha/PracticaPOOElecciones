@@ -12,7 +12,7 @@ import practicapoojunio.Votante.Votante;
  * @author Ruben
  */
 public class VentanaResultadosHistoricos extends javax.swing.JFrame {
-Votante votante;
+
     /**
      * Creates new form VentanaResultadosHistoricos
      */
@@ -79,7 +79,7 @@ Votante votante;
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-    MenuElecciones obj=new MenuElecciones(votante);
+    MenuElecciones obj=new MenuElecciones();
     obj.setVisible(true);
     dispose();// TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton1ActionPerformed

@@ -12,7 +12,7 @@ import practicapoojunio.Votante.Votante;
  * @author Ruben
  */
 public class VentanaEncuestas extends javax.swing.JFrame {
-    Votante votante;
+    
     /**
      * Creates new form VentanaEncuestas
      */
@@ -110,7 +110,7 @@ public class VentanaEncuestas extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButton2ActionPerformed
 
     private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
-    MenuElecciones obj=new MenuElecciones(votante);
+    MenuElecciones obj=new MenuElecciones();
     obj.setVisible(true);
     dispose();    // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton3ActionPerformed

@@ -18,8 +18,7 @@ public class Principal {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-      Votante votante=new Votante();
-      MenuElecciones menu=new MenuElecciones(votante);
+      VentanaInicial menu=new VentanaInicial();
       menu.setVisible(true);
       
       

@@ -13,9 +13,9 @@ import practicapoojunio.Votante.Votante;
  * @author Ruben
  */
 public class MenuElecciones extends javax.swing.JFrame {
-    Votante votante;
+    
 
-    public MenuElecciones(Votante votante) {
+    public MenuElecciones() {
         initComponents();
        
     }

@@ -27,7 +27,7 @@ import practicapoojunio.Votante.Votante;
 public class VentanaDatosMilitante extends javax.swing.JFrame {
     private Object array;
     private final ArrayList militantes;
-    Votante votante;
+  
     /**
      * Creates new form VentanaEncuestaMilitante
      */
@@ -307,7 +307,7 @@ public class VentanaDatosMilitante extends javax.swing.JFrame {
     
 
         JOptionPane.showMessageDialog(rootPane, "Militante registrado","Mensaje",JOptionPane.PLAIN_MESSAGE);
-        MenuElecciones obj= new MenuElecciones(votante);
+        MenuElecciones obj= new MenuElecciones();
         obj.setVisible(true);
         dispose();
                // TODO add your handling code here:

@@ -86,7 +86,7 @@ public class VentanaTipoPartido extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-    VentanaEncuestas obj=new VentanaEncuestas();
+    MenuElecciones obj=new MenuElecciones();
     obj.setVisible(true);
     dispose();           // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton1ActionPerformed

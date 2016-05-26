@@ -26,7 +26,7 @@ import practicapoojunio.Votante.Votante;
  */
 public class VentanaCrearElección extends javax.swing.JFrame {
     private final ArrayList elecciones;
-    Votante votante;
+   
     /**
      * Creates new form VentanaCrearElección
      */
@@ -373,7 +373,7 @@ public class VentanaCrearElección extends javax.swing.JFrame {
         }catch(Exception e){
         }
     JOptionPane.showMessageDialog(rootPane, "Elección creada correctamente","Mensaje",JOptionPane.PLAIN_MESSAGE);
-    MenuElecciones obj= new MenuElecciones(votante);
+    MenuElecciones obj= new MenuElecciones();
     obj.setVisible(true);
     dispose();
     
@@ -389,7 +389,7 @@ public class VentanaCrearElección extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField14ActionPerformed
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-    MenuElecciones obj=new MenuElecciones(votante);   
+    MenuElecciones obj=new MenuElecciones();   
     obj.setVisible(true);
     dispose();// TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton2ActionPerformed

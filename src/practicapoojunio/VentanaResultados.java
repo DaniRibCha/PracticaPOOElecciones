@@ -15,7 +15,7 @@ import practicapoojunio.Votante.Votante;
  * @author Ruben
  */
 public class VentanaResultados extends javax.swing.JFrame {
-Votante votante;
+
 Eleccion eleccion;
     /**
      * Creates new form VentanaResultados
@@ -231,7 +231,7 @@ Eleccion eleccion;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-    MenuElecciones obj=new MenuElecciones(votante);
+    MenuElecciones obj=new MenuElecciones();
     obj.setVisible(true);
     dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton1ActionPerformed
